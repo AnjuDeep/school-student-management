@@ -1,0 +1,133 @@
+{% extends 'mainbase.html' %}
+{%block title%}
+Gallery
+{%endblock%}
+{%block content%}
+{%load static%}
+<style>
+.image:hover img {
+  transform: scale(1.3,1.3);
+cursor: pointer;
+}
+.image {
+  border: 2px solid #fff;
+  width: 100%;
+  height: 184px;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 300;
+      transition: all 2s ease-in-out;
+}
+</style>
+
+  <h1 class="text-center">Gallery</h1>
+  <hr>
+  
+  <div class="container-fluid">
+  <div class="row mt-3">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 image">
+      <img
+        src="https://images.shiksha.com/mediadata/images/1551952181phples1dI.jpeg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Boat on Calm Water"
+      />
+  </div>
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 image">
+      <img
+        src="https://images.edexlive.com/uploads/user/imagelibrary/2020/6/17/original/b34.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Wintry Mountain Landscape"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mb-lg-0 image">
+      <img
+        src="https://img.jakpost.net/c/2022/04/26/2022_04_26_125104_1650985650._large.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Mountains in the Clouds"
+      />
+    </div>
+    
+      <div class="col-lg-4 mb-4 mt-4 mb-lg-0 image">
+      <img
+        src="https://www.admissionfever.com/Media/clgimg/gallery/600_img7570866583838577.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Boat on Calm Water"
+      />
+    </div>
+  
+    <div class="col-lg-4 mb-4 mt-4 mb-lg-0 image">
+      <img
+        src="https://btibangalore.org/wp-content/uploads/2020/09/IMG-20190907-WA0022.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Waves at Sea"
+      />
+      </div>
+      <div class="col-lg-4 mb-4 mt-4 mb-lg-0 image">
+      <img style="height:30vh"
+        src="https://www.admissionfever.com/Media/clgimg/gallery/600_img7073688275719085.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Yosemite National Park"
+      />
+    </div>
+    </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+<div class="row mt-4">
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 image">
+    <img
+      src="https://www.nttftrg.com/themes/custom/nttftrg/images/placement/3.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Boat on Calm Water"
+    />
+</div>
+<div class="col-lg-4 col-md-12 mb-4 mb-lg-0 image">
+    <img
+      src="https://www.nttftrg.com/themes/custom/nttftrg/images/nec-residentialfacilities15.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Wintry Mountain Landscape"
+    />
+  </div>
+
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 image">
+    <img
+      src="https://www.nttftrg.com/uploads/page_contents/8c720ba650aad322110c023b301e8621.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Mountains in the Clouds"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mt-4 mb-lg-0 image">
+    <img
+      src="https://600429-1942585-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2021/03/Studnets-in-campus-768x512-1.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Boat on Calm Water"
+    />
+  </div>
+
+  <div class="col-lg-4 mb-4 mt-4 mb-lg-0 image">
+    <img
+      src="https://image3.mouthshut.com/images/Restaurant/Photo/-85351_145348.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Waves at Sea"
+    />
+  </div>
+  <div class="col-lg-4 mb-4 mt-4 mb-lg-0 image">
+    <img
+      src="https://technocraftgroup.com/images/Infra/NTTF/IMG_4841.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+    />
+  </div>
+  
+  </div>
+</div>
+</div>
+
+<br><br><br>
+{% endblock %}

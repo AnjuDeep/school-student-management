@@ -1,0 +1,103 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        
+        <script>
+          var detailsCourse = {
+            "Tellicheri(TTC)": {
+              "Diploma Programs": ["Diploma in Computer Engineering", "Diploma in Tool and Die", "Diploma in Electronics"],
+              "Post Diploma Programs": ["Post Diploma in Tool Design"],
+              "Certificate Programs": ["Certificate Programme in Precision and CNC Machinist"]    
+            },
+            "Bangalore Electronics City(NEC)": {
+              "Diploma Programs": ["Diploma in Computer Engineering", "Diploma in Information Technology", "Diploma in Tool and Die", "Diploma in Electronics","Diploma in Mechatronics"],
+              "Post Diploma Programs": ["Post Diploma in Tool Design","Post Diploma in Power Electronics","Post Diploma in Industrial Automation",],
+              "Certificate Programs": ["Certificate Programme in Electronics"] 
+            },  
+            "Dharwad(DTC)": {
+              "Diploma Programs": ["Diploma in Computer Engineering", "Diploma in Tool and Die", "Diploma in Mechatronics"],
+              "Post Diploma Programs": ["Post Diploma in Tool Design"],
+              "Certificate Programs": ["Certificate Programme in Precision and CNC Machinist"]    
+            },
+            "Malappuram(INTC)": {
+              "Diploma Programs": ["Diploma in Electronics Engineering", "Diploma in Tool and Die", "Diploma in Mechatronics"],
+              "Post Diploma Programs": ["Post Diploma in Tool Design"],
+                 
+            }
+          }
+          window.onload = function() {
+            var locationSel = document.getElementById("locations");
+            var programSel = document.getElementById("programs");
+            var courseSel = document.getElementById("courses");
+            for (var x in detailsCourse) {
+              locationSel.options[locationSel.options.length] = new Option(x, x);
+            }
+            locationSel.onchange = function() {
+              //empty Chapters- and Topics- dropdowns
+              programSel.length = 1;
+              courseSel.length = 1;
+              //display correct values
+              for (var y in detailsCourse[this.value]) {
+                courseSel.options[courseSel.options.length] = new Option(y, y);
+              }
+            }
+            courseSel.onchange = function() {
+              //empty Chapters dropdown
+              programSel.length = 1;
+              //display correct values
+              var z = detailsCourse[locationSel.value][this.value];
+              for (var i = 0; i < z.length; i++) {
+                programSel.options[programSel.options.length] = new Option(z[i], z[i]);
+              }
+            }
+          }
+        </script>
+        <style>
+          .hov:hover{
+            background-color:darkorange !important;
+          }
+        </style>
+        
+    </head>
+    <body>
+        
+        
+        <div class="container-fluid bg-primary sticky-top" style="height:12vh">
+            <div class="row">
+          <form name="form1" id="form1" action="/action_page.php">;
+            <div style="background-color:darkorange; height:12vh;width:28vh;float:left;margin-left:8vh" class="text-center h6 p-4">
+            <a class="text-light">Find a Program</a>
+            </div>
+             <select class="bg-primary text-light h6 hov" style="height:12vh;width:45vh;border:none;" name="Locations" id="locations">
+                <option value="" selected="selected">Locations</option>
+              </select>
+              
+            <select class="bg-primary text-light h6 hov" name="Courses" style="height:12vh;width:40vh;border:none" id="courses">
+                <option value="" selected="selected">Programs</option>
+              </select>
+              
+              <select class="bg-primary text-light h6 hov" name="programs" style="height:12vh;width:40vh;border:none" id="programs">
+                <option value="" selected="selected">Courses</option>
+              </select>
+              
+              <input class=" text-light h6" type="submit" value="Submit" style="height:6vh;width:12vh;background-color:darkorange;border:none;border-radius:5px;margin-left:18vh">  
+            </form>
+          </div>
+        </div>
+          
+          
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="" async defer></script>
+    </body>
+</html>

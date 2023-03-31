@@ -1,0 +1,40 @@
+{% extends 'loginbase.html' %}
+{% block title %}
+Student Details
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container mt-5">
+    <h1 class="text-center">Student Details</h1>
+<hr>
+<div class="container bg-success text-center p-3 my-3">
+    <table class="table bg-dark text-white text-center" style="border:1px solid black;">
+        <thead>
+          <tr>
+            <th scope="col">Student Name</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Course name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Place</th>
+            <th scope="col" colspan="2"></th>
+          </tr>
+        </thead>
+        {%for i in form%}
+        <tbody>
+          <tr>
+            <td>{{i.stud_name}}</td>
+            <td>{{i.stud_email}}</td>
+            <td>{{i.stud_phone}}</td>
+            <td>{{i.course_name}}</td>
+            <td>{{i.stud_address}}</td>
+            <td>{{i.stud_place}}</td>
+            <td><a href="{%url 'edit'%}?edit={{i.stud_id}}" class="btn text-light btn-primary">Edit</a></td>
+            <td><a href="{%url 'delete'%}?delete={{i.stud_id}}" class="btn text-light btn-primary">Delete</a></td>
+          </tr>
+        </tbody>
+        {%endfor%}
+      </table>
+    </div>
+</div>
+{%endblock%}

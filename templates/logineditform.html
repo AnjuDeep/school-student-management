@@ -1,0 +1,47 @@
+{% extends 'loginbase.html' %}
+{%block title%}edit details
+{%endblock%}
+
+{%load static%}
+{%block content%}
+<h2 class="text-success text-center">Edit Student Details</h2>
+<form action="" method="POST" class="container">
+  {% csrf_token %}
+  {%for i in forms%}
+  <div class="input-group mb-3">
+    <span class="input-group-text col-2" id="basic-addon3">Student Name</span>
+  
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="stud_name" placeholder={{i.stud_name}}>
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text col-2" id="basic-addon3">Student Email</span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="stud_email" placeholder={{i.stud_email}}>
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text col-2" id="basic-addon3">Phone Number</span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="stud_phone" placeholder={{i.stud_phone}}>
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text col-2" id="basic-addon3">Course Name</span>
+  {% comment %} <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="course_name" placeholder={{i.course_name}}> {% endcomment %}
+  <input class="form-control" list="course_name" name="course_name" id="course_name" placeholder={{i.course_name}}>
+  <datalist id="course_name" >
+    {% for j in course %}
+    <option value={{j.id}}>{{j.course_name}}</option>
+    {% endfor %}
+  </datalist>
+</div>
+<div class="input-group mb-3">
+    <span class="input-group-text col-2" id="basic-addon3">Student Address</span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="stud_address" placeholder={{i.stud_address}}>
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text col-2" id="basic-addon3">Student Place</span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="stud_place" placeholder={{i.stud_place}}>
+</div>
+{%endfor%}
+<div class="d-flex justify-content-center">
+  <input type="submit" value="Edit" class="btn btn-dark text-white w-25">
+</div>
+</form>
+{%endblock%}

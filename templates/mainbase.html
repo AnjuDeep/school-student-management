@@ -1,0 +1,128 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="{%static '/css/style.css'%}">
+        <style>
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          
+          .dropdown-content a{
+            color: black;
+            padding: 12px 16px;
+            text-decoration:none;
+            display: block;
+          }
+          .dropdown-content a:hover {background-color: #ddd;text-decoration:none;}
+           .dropdown:hover .dropdown-content {display: block;}
+           .dropdown:hover .dropdown-content {display: block;}
+          </style>      
+        
+    </head>
+    <body>
+        <div class="sticky-top mt-2 ">
+        <nav class="navbar navbar-light bg-primary" style="height:10vh">
+            <a class="navbar-brand text-white" href="{%url 'mainhome'%}">
+              <img src="{%static '/images/phone.png'%}" width="40" height="37" class="d-inline-block align-top mt-0" alt="" style="border-radius:20px">
+              Toll Free: 1800 103 6883
+            </a>
+            <a href="{%url 'login'%}"><button class="btn btn-outline-success my-2 my-sm-0 bg-light" type="submit">Login</button></a>
+          </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+          <a class="navbar-brand" href="#">
+            <img src="https://www.nttftrg.com/themes/custom/nttftrg/images/site_images/6c069f0b784beb3405494a4d8a1e5564.png" width="130" height="40" class="d-inline-block align-top mt-0" alt="">
+          </a>
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto h6" style="margin-left:45vh">
+                <li class="nav-item active mr-4">
+                  <a class="nav-link text-primary mainnnav" href="{%url 'mainhome'%}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item mr-4 dropdown">
+                  <a class="nav-link text-primary mainnnav dropbtn" href="">About Us</a>
+                  <div class="dropdown-content">
+                    <a href="{%url 'aboutorg'%}">Our Organisation</a>
+                    <a href="{%url 'aboutrec'%}">Recognition</a>
+                    <a href="{%url 'aboutlead'%}">Leadership Team</a>
+                    <a href="{%url 'aboutexam'%}">Exam System</a>
+                  </div>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link text-primary mainnnav" href="{%url 'maingallery'%}">Gallery</a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link text-primary mainnnav" href="{%url 'course'%}">Courses</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-primary mainnnav" href="{%url 'contact'%}">Contact Us</a>
+                </li>
+              </ul>
+                
+            </div>
+          </nav>
+        </div>
+        {% block content %}{% endblock %}
+      <section>
+        <footer>
+          <div class="container-fluid mt-5 bg-dark" style="height:70vh;">
+            <div class="p-3"></div>
+            <div class="container " style="background-color:black;height:15vh;">
+              <span>
+              <div class="text-light ml-5" style="float:left"><img src="{%static '/images/footer/map.jpg'%}" class="ml-2 mr-3" style="height:8vh;width:6vh" >Bangalore,E-City,pin-543765
+              <img src="{%static '/images/footer/phone.webp'%}" style="height:8vh;width:6vh" class="ml-5 mr-3">Call Us : 8070356420,8290340578
+              <img src="{%static '/images/footer/email1.png'%}" style="height:15vh;width:14vh" class="ml-5" >Email Us : principal@nttf.co.in
+              </div>
+              </span>
+            </div>
+            <div class="container bg-dark " >
+              <img src="{%static '/images/footer/nttf.jpg'%}" style="height:32vh;width:50vh;float:left" class="mt-4">
+              <ul class="navbar-nav h6" style="float:left;margin-left:15vh">
+                <h3 style="color:darkred">Quick Links</h3>
+                <li class="nav-item active">
+                  <a class="nav-link text-light h5" href="{%url 'mainhome'%}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light h6" href="{%url 'aboutorg'%}">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light h6" href="{%url 'maingallery'%}">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light h6" href="{%url 'course'%}">Courses</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light h6" href="{%url 'contact'%}">Contact Us</a>
+                </li>
+              </ul>
+                <h3 style="color:darkred;margin-left:95vh">Location Map</h3>
+                <iframe class="gmap_iframe" style="margin-left:12vh" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=390&amp;height=226&amp;hl=en&amp;q=bangalore&amp;t=&amp;z=11&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://piratebay-proxys.com/"></a><style>.mapouter{position:relative;text-align:right;width:390px;height:226px;}.gmap_canvas {overflow:hidden;background:none!important;width:390px;height:226px;}.gmap_iframe {width:390px!important;height:226px!important;}</style>
+          </div>
+          <div>
+              <p style="margin-left:45vh" class="h5 mt-5 text-light">Privacy Policy  |  Copyright © 2020 Nettur Technical Training Foundation. All rights reserved.</p>
+          </div>
+          </div>
+        </footer>
+
+      </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="" async defer></script>
+    </body>
+</html>
